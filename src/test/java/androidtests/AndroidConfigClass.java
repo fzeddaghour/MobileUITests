@@ -10,7 +10,7 @@ import java.net.URL;
 /**
  * Created by FatimaZahra on 27/01/2017.
  */
-public class Config {
+public class AndroidConfigClass {
 
     File appDir = new File("..//LeKiosqueAndroid/lekioskAndroid/app/build/outputs/apk/");
     File app = new File(appDir, "app-lekiosk-preprod.apk");
@@ -18,7 +18,7 @@ public class Config {
     static AndroidDriver driver;
     DesiredCapabilities capabilities = new DesiredCapabilities();
 
-    public Config() {
+    public AndroidConfigClass() {
         capabilities.setCapability("deviceName", "emulator-5554");
         capabilities.setCapability("app", app.getAbsolutePath());
 

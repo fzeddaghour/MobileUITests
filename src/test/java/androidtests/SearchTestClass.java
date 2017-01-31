@@ -1,5 +1,6 @@
 package androidtests;
 
+import io.appium.java_client.NetworkConnectionSetting;
 import org.junit.AfterClass;
 import org.junit.Assert;
 import org.junit.FixMethodOrder;
@@ -7,7 +8,8 @@ import org.junit.Test;
 import org.junit.runners.MethodSorters;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.WebDriverWait;
-//import io.appium.java_client.android.Connection;
+import io.appium.java_client.android.*;
+import io.appium.java_client.android.Connection;
 
 import static org.openqa.selenium.support.ui.ExpectedConditions.visibilityOfElementLocated;
 
@@ -17,9 +19,9 @@ import static org.openqa.selenium.support.ui.ExpectedConditions.visibilityOfElem
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 
-public class SearchTest {
+public class SearchTestClass {
 
-    static Config d = new Config();
+    static AndroidConfigClass d = new AndroidConfigClass();
     WebDriverWait wait = new WebDriverWait(d.getDriver(), 10);
 
     //Online mode
@@ -76,17 +78,17 @@ public class SearchTest {
         Assert.assertEquals("Problème de connexion", this.d.getDriver().findElement(By.id("CDSearchTextInternetProblem")).getText());
 
     }
-    */
+*/
     //TODO search in cache
     //Search in cache test case could not be tested because the functionality is not implemented, nothing is saved in cache
 
     @AfterClass
     public static void setConnectionBack() {
-       // d.getDriver().setConnection(Connection.ALL);
+
+        //d.getDriver().setConnection(Connection.ALL);
     }
 
     public static void tearDown() {
         d.getDriver().quit();
     }
-
 }
