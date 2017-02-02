@@ -1,4 +1,4 @@
-package androidtests;
+package fr.lekiosque;
 
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.Connection;
@@ -18,7 +18,7 @@ import static org.openqa.selenium.support.ui.ExpectedConditions.visibilityOfElem
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 
-public class NewsstandTestClass {
+public class NewsstandTest {
 
     static AndroidConfigClass d = new AndroidConfigClass();
     WebDriverWait wait = new WebDriverWait(d.getDriver(), 10);
@@ -72,7 +72,6 @@ public class NewsstandTestClass {
         d.getDriver().findElement(By.id("android:id/up")).click();
     }
 
-
     //switch product category BD or MAG
     @Test
     public void testDSwitchProductCategory() throws Exception {
@@ -84,16 +83,15 @@ public class NewsstandTestClass {
         Assert.assertEquals("Les BD ", d.getDriver().findElement(By.id("CDNewsstandBlockTitleUIText")).getText());
         Assert.assertTrue(d.getDriver().findElement(By.id("CDNewsstandUIHorizontalListView")).isDisplayed());
     }
+
     //Turn off internet connection and check that the butom bar is displayed
-    /*
-        @Test
-        public void testEOfflineMode() throws Exception {
-            d.getDriver().setConnection(Connection.AIRPLANE);
-            wait.until((visibilityOfElementLocated(By.id("menu_newsstand_action_categories"))));
-            Assert.assertTrue(d.getDriver().findElement(By.id("CDNewsstandNoConnectionUIBar")).isDisplayed());
-            d.getDriver().setConnection(Connection.ALL);
-        }
-        */
+    @Test
+    public void testEOfflineMode() throws Exception {
+        d.getDriver().setConnection(Connection.AIRPLANE);
+        wait.until((visibilityOfElementLocated(By.id("menu_newsstand_action_categories"))));
+        Assert.assertTrue(d.getDriver().findElement(By.id("CDNewsstandNoConnectionUIBar")).isDisplayed());
+        d.getDriver().setConnection(Connection.ALL);
+    }
 
     @AfterClass
     public static void tearDown() {

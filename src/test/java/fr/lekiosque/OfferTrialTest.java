@@ -1,4 +1,4 @@
-package androidtests;
+package fr.lekiosque;
 
 import io.appium.java_client.MobileElement;
 import org.junit.AfterClass;
@@ -17,7 +17,7 @@ import static org.openqa.selenium.support.ui.ExpectedConditions.visibilityOfElem
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 
-public class OfferTrialTestClass {
+public class OfferTrialTest {
 
     GenericClass generic;
     public String randomEmail = generic.emailAccount();

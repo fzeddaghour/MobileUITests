@@ -1,4 +1,4 @@
-package androidtests;
+package fr.lekiosque;
 
 import org.junit.*;
 import org.junit.runners.MethodSorters;
@@ -13,7 +13,7 @@ import static org.openqa.selenium.support.ui.ExpectedConditions.visibilityOfElem
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 
-public class ForgottenPasswordTestClass {
+public class ForgottenPasswordTest {
 
     static AndroidConfigClass d = new AndroidConfigClass();
     WebDriverWait wait = new WebDriverWait(d.getDriver(), 10);

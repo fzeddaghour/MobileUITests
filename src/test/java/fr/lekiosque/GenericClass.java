@@ -1,4 +1,4 @@
-package androidtests;
+package fr.lekiosque;
 
 import io.appium.java_client.MobileElement;
 import org.apache.commons.lang3.RandomStringUtils;

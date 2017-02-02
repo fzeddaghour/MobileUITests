@@ -1,4 +1,4 @@
-package androidtests;
+package fr.lekiosque;
 
 import org.junit.AfterClass;
 import org.junit.Assert;
@@ -18,7 +18,7 @@ import static org.openqa.selenium.support.ui.ExpectedConditions.visibilityOfElem
 
 /* This test class is to find every element of the Menu Drawer for Connected & non connected users */
 
-public class MenuTestClass {
+public class MenuTest {
 
     static AndroidConfigClass d = new AndroidConfigClass();
     WebDriverWait wait = new WebDriverWait(d.getDriver(), 10);

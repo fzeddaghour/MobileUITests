@@ -1,6 +1,5 @@
-package androidtests;
+package fr.lekiosque;
 
-import io.appium.java_client.android.Connection;
 import org.junit.AfterClass;
 import org.junit.Assert;
 import org.junit.FixMethodOrder;
@@ -8,16 +7,17 @@ import org.junit.Test;
 import org.junit.runners.MethodSorters;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import io.appium.java_client.android.Connection;
 
 import static org.openqa.selenium.support.ui.ExpectedConditions.visibilityOfElementLocated;
 
 /**
- * Created by FatimaZahra on 31/01/2017.
+ * Created by FatimaZahra on 27/01/2017.
  */
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 
-public class SignInTestClass {
+public class SearchTest {
 
     static AndroidConfigClass d = new AndroidConfigClass();
     WebDriverWait wait = new WebDriverWait(d.getDriver(), 10);
@@ -61,32 +61,32 @@ public class SignInTestClass {
     }
 
     //OffLine mode
-/*
-        @Test
-        //No results found in offLine mode.
-        public void testDSearchInOffLineMode() throws Exception {
-            //set connection to OFF
-            d.getDriver().setConnection(Connection.AIRPLANE);
-            //test Start
-            d.getDriver().findElement(By.id("CDMenuBackUIButtun")).click();
-            wait.until(visibilityOfElementLocated(By.id("Effacer la requête")));
-            d.getDriver().findElement(By.id("Effacer la requête")).click();
-            d.getDriver().findElement(By.id("CDSearchUIText")).sendKeys("OffLineText" + "\n");
-            wait.until(visibilityOfElementLocated(By.id("CDSearchTextInternetProblem")));
-            Assert.assertEquals("Problème de connexion", this.d.getDriver().findElement(By.id("CDSearchTextInternetProblem")).getText());
 
-        }
-        */
+    @Test
+    //No results found in offLine mode.
+    public void testDSearchInOffLineMode() throws Exception {
+        //set connection to OFF
+        d.getDriver().setConnection(Connection.AIRPLANE);
+        //test Start
+        d.getDriver().findElement(By.id("CDMenuBackUIButtun")).click();
+        wait.until(visibilityOfElementLocated(By.id("Effacer la requête")));
+        d.getDriver().findElement(By.id("Effacer la requête")).click();
+        d.getDriver().findElement(By.id("CDSearchUIText")).sendKeys("OffLineText" + "\n");
+        wait.until(visibilityOfElementLocated(By.id("CDSearchTextInternetProblem")));
+        Assert.assertEquals("Problème de connexion", this.d.getDriver().findElement(By.id("CDSearchTextInternetProblem")).getText());
+
+    }
+
     //TODO search in cache
     //Search in cache test case could not be tested because the functionality is not implemented, nothing is saved in cache
 
     @AfterClass
     public static void setConnectionBack() {
-        //d.getDriver().setConnection(Connection.ALL);
+
+        d.getDriver().setConnection(Connection.ALL);
     }
 
     public static void tearDown() {
         d.getDriver().quit();
     }
-
 }

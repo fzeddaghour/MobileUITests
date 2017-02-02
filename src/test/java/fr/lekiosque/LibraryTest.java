@@ -1,4 +1,4 @@
-package androidtests;
+package fr.lekiosque;
 
 import org.junit.Assert;
 import org.junit.FixMethodOrder;
@@ -15,7 +15,7 @@ import static org.openqa.selenium.support.ui.ExpectedConditions.visibilityOfElem
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 
-public class LibraryTestClass {
+public class LibraryTest {
 
     static AndroidConfigClass d = new AndroidConfigClass();
     WebDriverWait wait = new WebDriverWait(d.getDriver(), 10);

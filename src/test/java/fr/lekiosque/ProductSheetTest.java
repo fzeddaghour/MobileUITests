@@ -1,4 +1,4 @@
-package androidtests;
+package fr.lekiosque;
 
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
@@ -16,11 +16,11 @@ import static org.openqa.selenium.support.ui.ExpectedConditions.visibilityOfElem
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 
-public class ProductSheetTestClass {
+public class ProductSheetTest {
 
     static AndroidConfigClass d = new AndroidConfigClass();
     WebDriverWait wait = new WebDriverWait(d.getDriver(), 10);
-    SignUpTestClass s = new SignUpTestClass();
+    SignUpTest s = new SignUpTest();
 
     @BeforeClass
     public void BeforeAll() {
